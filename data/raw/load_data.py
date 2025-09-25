@@ -47,7 +47,7 @@ LEFT JOIN (SELECT DISTINCT id_municipio,nome  FROM `basedosdados.br_bd_diretorio
 
 df_public_security = bd.read_sql(query = query, billing_project_id = billing_id)
 
-# Mortality
+# Mortality %%
 query_mortality = """
   WITH 
 dicionario_sexo AS (
@@ -97,4 +97,4 @@ LEFT JOIN `dicionario_raca_cor`
     ON dados.raca_cor = chave_raca_cor
 """
 
-bd.read_sql(query = query_mortality, billing_project_id = billing_id)
+df_mortality = bd.read_sql(query = query_mortality, billing_project_id = billing_id)
